@@ -2,6 +2,8 @@
 
 [HomePage][io-home]
 
+[Vuetify-demo][vuetify-demo]
+
 It focuses on:
 
  - **Java**
@@ -30,3 +32,4 @@ It focuses on:
  
  
  [io-home]: https://niuql.github.io
+ [vuetify-demo]: https://niuql.github.io/Vuetify/index.html

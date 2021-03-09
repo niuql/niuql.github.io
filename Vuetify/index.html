@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+	<v-app>
+		<v-container>
+		
+		  <!-- AppBar -->  
+		  <v-app-bar app>
+		    <!-- Icon -->
+			<v-btn icon>
+			  <v-icon>mdi-book-open-page-variant</v-icon>
+			</v-btn>
+			<!-- Title -->
+			<v-toolbar-title class="ps-0">Page title</v-toolbar-title>
+			
+			<v-divider class="mx-2 d-none d-sm-flex" vertical></v-divider>
+
+			<!-- Sub Title -->
+			<span class="subheading d-none d-sm-flex">Sub title</span>
+			
+			<v-spacer></v-spacer>
+
+			<!-- Search Button -->
+			<v-btn icon>
+			  <v-icon>mdi-magnify</v-icon>
+			</v-btn>
+			<!-- Bookmark Button -->
+			<v-btn icon>
+			  <v-icon>mdi-bookmark-multiple-outline</v-icon>
+			</v-btn>
+			<!-- Avatar -->
+			<v-avatar class="ms-4">
+			  <img src="https://avatars.githubusercontent.com/u/11428035?s=460&v=4"></img>
+			</v-avatar>
+		  </v-app-bar>
+			
+		  <!-- Main container -->
+		  <v-main>
+		  <v-container fluid class="pa-0">
+			<v-row
+				:align="align"
+				no-gutters
+				style="height: 300px;"
+			  >
+			    <!-- Carousel -->
+				<v-col>
+				    <v-carousel
+					  :continuous="false"
+					  :cycle="cycle"
+					  :show-arrows="false"
+					  hide-delimiter-background
+					  delimiter-icon="mdi-minus"
+					  height="300"
+					>
+					  <v-carousel-item
+						v-for="(slide, i) in slides"
+						:key="i"
+					  >
+						<v-sheet
+						  :color="colors[i]"
+						  height="100%"
+						  tile
+						>
+						  <v-row
+							class="fill-height"
+							align="center"
+							justify="center"
+						  >
+							<div class="display-3">
+							  Slide
+							</div>
+						  </v-row>
+						</v-sheet>
+					  </v-carousel-item>
+					</v-carousel>
+				</v-col>
+				<v-col>
+				  <v-card
+					class="pa-2"
+					outlined
+					tile>
+					One of three columns
+				  </v-card>
+				</v-col>
+				<v-col>
+				  <v-card
+					class="pa-2"
+					outlined
+					tile>
+					One of three columns
+				  </v-card>
+				</v-col>
+			</v-row>
+		  </v-container>
+		  </v-main>
+		  
+		</v-container>
+	</v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+    })
+  </script>
+  
+  <script>
+	export default {
+    data () {
+      return {
+        colors: [
+          'green',
+          'secondary',
+          'yellow darken-4',
+          'red lighten-2',
+          'orange darken-1',
+        ],
+        cycle: false,
+        slides: [
+          'First',
+          'Second',
+          'Third',
+          'Fourth',
+          'Fifth',
+        ],
+      }
+    },
+  }
+	</script>
+</body>
+</html>
+
+
