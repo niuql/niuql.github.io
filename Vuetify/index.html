@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
+
   <div id="app">
 	<v-app>
 		<v-container>
@@ -43,6 +44,7 @@
 			
 		  <!-- Main container -->
 		  <v-main>
+		  <template>
 		  <v-container fluid class="pa-0">
 			<v-row
 				:align="align"
@@ -52,20 +54,20 @@
 			    <!-- Carousel -->
 				<v-col>
 				    <v-carousel
-					  :continuous="false"
+					  :continuous="true"
 					  :cycle="cycle"
 					  :show-arrows="false"
 					  hide-delimiter-background
 					  delimiter-icon="mdi-minus"
-					  height="300"
+					  height="600"
 					>
 					  <v-carousel-item
 						v-for="(slide, i) in slides"
 						:key="i"
 					  >
 						<v-sheet
+						  class="fill-height"
 						  :color="colors[i]"
-						  height="100%"
 						  tile
 						>
 						  <v-row
@@ -74,7 +76,7 @@
 							justify="center"
 						  >
 							<div class="display-3">
-							  Slide
+							  {{ slide }} Slide
 							</div>
 						  </v-row>
 						</v-sheet>
@@ -99,6 +101,7 @@
 				</v-col>
 			</v-row>
 		  </v-container>
+		  </template>
 		  </v-main>
 		  
 		</v-container>
@@ -111,32 +114,30 @@
     new Vue({
       el: '#app',
       vuetify: new Vuetify(),
+	  data () {
+		  return {
+			colors: [
+			  'green',
+			  'secondary',
+			  'yellow darken-4',
+			  'red lighten-2',
+			  'orange darken-1',
+			],
+			cycle: false,
+			slides: [
+			  'First',
+			  'Second',
+			  'Third',
+			  'Fourth',
+			  'Fifth',
+			],
+		  }
+		},
+	  
+	  
     })
   </script>
-  
-  <script>
-	export default {
-    data () {
-      return {
-        colors: [
-          'green',
-          'secondary',
-          'yellow darken-4',
-          'red lighten-2',
-          'orange darken-1',
-        ],
-        cycle: false,
-        slides: [
-          'First',
-          'Second',
-          'Third',
-          'Fourth',
-          'Fifth',
-        ],
-      }
-    },
-  }
-	</script>
+
 </body>
 </html>
 
