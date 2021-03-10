@@ -59,30 +59,55 @@
 					  :show-arrows="false"
 					  hide-delimiter-background
 					  delimiter-icon="mdi-minus"
-					  height="600"
+					  height="400"
 					>
 					  <v-carousel-item
-						v-for="(slide, i) in slides"
-						:key="i"
+						v-for="n in 5"
+						:key="n"
 					  >
-						<v-sheet
-						  class="fill-height"
-						  :color="colors[i]"
-						  tile
-						>
-						  <v-row
-							class="fill-height"
-							align="center"
-							justify="center"
+						<!-- blog card -->
+						<v-card
+							class="mx-auto pb-12"
+							max-width="800"
+							elevation="0"
+							height="100%"
+							tile
 						  >
-							<div class="display-3">
-							  {{ slide }} Slide
-							</div>
-						  </v-row>
-						</v-sheet>
+
+							<v-img
+							  height="250"
+							  src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+							></v-img>
+
+							<v-card-title>Cafe Badilico</v-card-title>
+							
+							<v-card-text>
+							  <v-row
+								align="center"
+								class="mx-0"
+							  >
+							  <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+							</v-card-text>
+
+							<v-divider/>
+							<v-card-actions>
+							  <v-btn
+								color="deep-purple lighten-2"
+								text
+							  >
+								Reserve
+							  </v-btn>
+							</v-card-actions>
+						  </v-card>
+						
+
+						
 					  </v-carousel-item>
 					</v-carousel>
 				</v-col>
+				
+				
+				
 				<v-col>
 				  <v-card
 					class="pa-2"
